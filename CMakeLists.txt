@@ -1,8 +1,17 @@
 cmake_minimum_required(VERSION 4.2)
+project("Rocket AP" LANGUAGES C CXX ASM)
+
+# Enable generation of compile_commands.json for clangd / language servers
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# Bare-Metal RISC-V Setup
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR riscv)
 
 # -----------------------------------------------------------------------------
 # RISC-V Bare-Metal Cross-Compilation Setup
 # -----------------------------------------------------------------------------
+
 if(NOT CMAKE_TOOLCHAIN_FILE)
     set(CMAKE_SYSTEM_NAME Generic CACHE STRING "Target System (Generic for bare-metal)")
     set(CMAKE_SYSTEM_PROCESSOR riscv CACHE STRING "Target Processor")
@@ -58,11 +67,6 @@ if(NOT CMAKE_TOOLCHAIN_FILE)
         endif()
     endif()
 endif()
-
-project("Rocket AP" LANGUAGES C CXX ASM)
-
-# Enable generation of compile_commands.json for clangd / language servers
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # -----------------------------------------------------------------------------
 # RISC-V Architecture, ABI, and Toolchain Paths (referencing Makefile)
@@ -124,6 +128,10 @@ add_library(hal STATIC
 # Include directories: include/ (public) and src/
 target_include_directories(hal PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
+
+target_include_directories(hal PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 

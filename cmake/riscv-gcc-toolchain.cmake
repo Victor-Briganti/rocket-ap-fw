@@ -1,8 +1,7 @@
 # ==============================================================================
 # RISC-V Bare-Metal GCC Toolchain File
 # ==============================================================================
-set(CMAKE_SYSTEM_NAME Generic)
-set(CMAKE_SYSTEM_PROCESSOR riscv)
+
 
 # Prevent CMake from attempting to link a test executable during compiler detection
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)

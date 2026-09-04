@@ -12,7 +12,6 @@
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "CMAKE_BUILD_TYPE": "Debug",
         "RISCV_ARCH": "rv32imac",
         "RISCV_ABI": "ilp32",

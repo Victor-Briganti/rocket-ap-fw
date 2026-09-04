@@ -1,52 +1,143 @@
-# Prerequisites
-*.d
+# ==============================================================================
+# Comprehensive .gitignore for Modern C / C++ Projects
+# ==============================================================================
 
-# Object files
+# Prerequisites / Compiled Object Files
 *.o
-*.ko
 *.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
+*.ko
+*.ii
+*.s
+*.ll
+*.bc
 
 # Precompiled Headers
 *.gch
 *.pch
 
-# Libraries
+# Libraries and Shared Objects
 *.lib
 *.a
 *.la
 *.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
 *.so
 *.so.*
 *.dylib
+*.dll
 
-# Executables
+# Executables & Debug Artifacts
 *.exe
 *.out
 *.app
 *.i*86
 *.x86_64
 *.hex
+*.elf
+*.bin
 
-# Debug files
+# Debug Symbols & Profiling
 *.dSYM/
 *.su
 *.idb
 *.pdb
+*.ilk
+*.exp
+*.map
+gmon.out
+perf.data
+perf.data.old
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Code Coverage (gcov, lcov)
+*.gcda
+*.gcno
+*.gcov
+coverage/
+coverage.info
+htmlcov/
+
+# Build Systems & Dependencies
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+CMakeUserPresets.json
+
+# Ninja
+.ninja_deps
+.ninja_log
+build.ninja
+
+# Meson / Autotools
+builddir/
+subprojects/
+config.log
+config.status
+.deps/
+.libs/
+
+# Standard Build Output Directories
+build/
+build-*/
+bin/
+lib/
+out/
+target/
+
+# Package Managers
+# Conan
+conan.lock
+conanbuildinfo.*
+conaninfo.txt
+conan.log
+.conan/
+
+# vcpkg
+vcpkg_installed/
+.vcpkg/
+
+# IDE & Editor Configurations
+# Visual Studio / VS Code
+.vs/
+*.sln.docstates
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+*.sw?
+Session.vim
+.netrwhist
+
+# Language Server / Indexing Cache
+.cache/
+.ccls-cache/
+.clangd/
+
+# OS Specific Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Environment / Local Configuration
+.env
+*.local
