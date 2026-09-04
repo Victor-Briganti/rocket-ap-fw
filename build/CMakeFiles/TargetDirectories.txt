@@ -1,0 +1,3 @@
+/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/build/CMakeFiles/hal.dir
+/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/build/CMakeFiles/edit_cache.dir
+/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/build/CMakeFiles/rebuild_cache.dir

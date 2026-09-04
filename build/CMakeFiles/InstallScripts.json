@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

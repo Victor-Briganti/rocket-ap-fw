@@ -1,2 +1,0 @@
-src/entry.o: \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/src/entry.S

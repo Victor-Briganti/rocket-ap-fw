@@ -1,5 +1,0 @@
-src/drivers/sifive_fe310-g000_prci.o: \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/src/drivers/sifive_fe310-g000_prci.c \
- metal/machine/platform.h
-
-metal/machine/platform.h:

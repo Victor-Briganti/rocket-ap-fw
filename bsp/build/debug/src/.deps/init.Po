@@ -1,5 +1,0 @@
-src/init.o: \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/src/init.c \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/metal/init.h
-
-C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/metal/init.h:

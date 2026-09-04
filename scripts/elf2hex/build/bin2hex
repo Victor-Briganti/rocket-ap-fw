@@ -1,2 +1,0 @@
-#!/bin/sh
-exec /usr/bin/python3 -u '/root/wsFreedomStudio/sifive_e24_rtl_eval_21G1_hello/scripts/elf2hex/install/local/lib/python3.10/dist-packages/freedom-bin2hex.py' ${1+"$@"}

@@ -1,0 +1,80 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "RISCV_ARCH": "rv32imac",
+        "RISCV_ABI": "ilp32",
+        "RISCV_CMODEL": "medany"
+      }
+    },
+    {
+      "name": "gcc",
+      "displayName": "RISC-V GCC (rv32imac)",
+      "description": "Build using the GNU RISC-V toolchain (rv32imac, ilp32, medany)",
+      "inherits": "base",
+      "toolchainFile": "${sourceDir}/cmake/riscv-gcc-toolchain.cmake"
+    },
+    {
+      "name": "llvm",
+      "displayName": "RISC-V LLVM/Clang (rv32imac)",
+      "description": "Build using LLVM/Clang with GCC sysroot (rv32imac, ilp32, medany)",
+      "inherits": "base",
+      "toolchainFile": "${sourceDir}/cmake/riscv-llvm-toolchain.cmake"
+    },
+    {
+      "name": "gcc-rv64",
+      "displayName": "RISC-V GCC (rv64gc)",
+      "description": "Build using the GNU RISC-V toolchain (rv64gc, lp64d, medany)",
+      "inherits": "gcc",
+      "cacheVariables": {
+        "RISCV_ARCH": "rv64gc",
+        "RISCV_ABI": "lp64d"
+      }
+    },
+    {
+      "name": "llvm-rv64",
+      "displayName": "RISC-V LLVM/Clang (rv64gc)",
+      "description": "Build using LLVM/Clang with GCC sysroot (rv64gc, lp64d, medany)",
+      "inherits": "llvm",
+      "cacheVariables": {
+        "RISCV_ARCH": "rv64gc",
+        "RISCV_ABI": "lp64d"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "gcc",
+      "displayName": "Build GCC (rv32imac)",
+      "configurePreset": "gcc"
+    },
+    {
+      "name": "llvm",
+      "displayName": "Build LLVM (rv32imac)",
+      "configurePreset": "llvm"
+    },
+    {
+      "name": "gcc-rv64",
+      "displayName": "Build GCC (rv64gc)",
+      "configurePreset": "gcc-rv64"
+    },
+    {
+      "name": "llvm-rv64",
+      "displayName": "Build LLVM (rv64gc)",
+      "configurePreset": "llvm-rv64"
+    }
+  ]
+}
+

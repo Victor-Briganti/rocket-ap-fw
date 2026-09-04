@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/build",
+  "command": "/usr/bin/clang  -I/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/include -I/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src --target=riscv64-unknown-elf --gcc-toolchain=/opt/riscv --sysroot=/opt/riscv/riscv64-unknown-elf -isystem /opt/riscv/riscv64-unknown-elf/include -g -march=rv32imac -mabi=ilp32 -mcmodel=medany -ffunction-sections -fdata-sections -Wall -Wextra -o CMakeFiles/hal.dir/src/ap_hal.c.obj -c /run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/ap_hal.c",
+  "file": "/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/ap_hal.c",
+  "output": "CMakeFiles/hal.dir/src/ap_hal.c.obj"
+},
+{
+  "directory": "/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/build",
+  "command": "/usr/bin/clang  -I/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/include -I/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src -isystem /opt/riscv/riscv64-unknown-elf/include --target=riscv64-unknown-elf --gcc-toolchain=/opt/riscv --sysroot=/opt/riscv/riscv64-unknown-elf -g -march=rv32imac -mabi=ilp32 -mcmodel=medany -ffunction-sections -fdata-sections -Wall -Wextra -o CMakeFiles/hal.dir/src/ap_funcs.S.obj -c /run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/ap_funcs.S",
+  "file": "/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/ap_funcs.S",
+  "output": "CMakeFiles/hal.dir/src/ap_funcs.S.obj"
+},
+{
+  "directory": "/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/build",
+  "command": "/usr/bin/clang  -I/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/include -I/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src -isystem /opt/riscv/riscv64-unknown-elf/include --target=riscv64-unknown-elf --gcc-toolchain=/opt/riscv --sysroot=/opt/riscv/riscv64-unknown-elf -g -march=rv32imac -mabi=ilp32 -mcmodel=medany -ffunction-sections -fdata-sections -Wall -Wextra -o CMakeFiles/hal.dir/src/cycle_counter.S.obj -c /run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/cycle_counter.S",
+  "file": "/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/cycle_counter.S",
+  "output": "CMakeFiles/hal.dir/src/cycle_counter.S.obj"
+}
+]

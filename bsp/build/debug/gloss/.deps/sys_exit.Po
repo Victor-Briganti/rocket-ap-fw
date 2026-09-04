@@ -1,5 +1,0 @@
-gloss/sys_exit.o: \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/gloss/sys_exit.c \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/metal/shutdown.h
-
-C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/metal/shutdown.h:

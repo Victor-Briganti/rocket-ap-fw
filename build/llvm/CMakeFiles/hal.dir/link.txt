@@ -1,0 +1,2 @@
+/usr/bin/llvm-ar qc libhal.a CMakeFiles/hal.dir/src/ap_hal.c.obj CMakeFiles/hal.dir/src/ap_funcs.S.obj CMakeFiles/hal.dir/src/cycle_counter.S.obj
+/usr/bin/llvm-ranlib libhal.a

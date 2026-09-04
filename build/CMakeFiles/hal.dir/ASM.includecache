@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/ap_funcs.S
+
+/run/host/home/nessuno/Documents/workspace/rocket-ap-fw/src/cycle_counter.S
+

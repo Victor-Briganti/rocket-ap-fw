@@ -1,2 +1,0 @@
-gloss/crt0.o: \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/gloss/crt0.S

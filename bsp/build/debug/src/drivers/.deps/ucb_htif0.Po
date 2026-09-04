@@ -1,5 +1,0 @@
-src/drivers/ucb_htif0.o: \
- C:/Users/camil/wsFreedomStudio/sifive_e24_rtl_eval_llama_hello/freedom-metal/src/drivers/ucb_htif0.c \
- metal/machine/platform.h
-
-metal/machine/platform.h:
