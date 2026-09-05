@@ -70,6 +70,12 @@ AP_NO_OPT void ap_flush(ap_bank_t bank, ap_column_t col);
 
 void ap_write_col(ap_bank_t bank, ap_column_t col, uint8_t *dest, size_t size);
 void ap_read_col(ap_bank_t bank, ap_column_t col, uint8_t *dest, size_t size);
+void ap_launch(ap_cmd_t cmd, ap_bank_t bank, ap_column_t col, ap_axis_t axis,
+               ap_target_t target);
+void ap_wait();
+bool ap_poll();
+void ap_execute(ap_cmd_t cmd, ap_bank_t bank, ap_column_t col, ap_axis_t axis,
+                ap_target_t target);
 void ap_search(ap_bank_t bank, ap_column_t col, uint8_t key,
                ap_target_t target);
 

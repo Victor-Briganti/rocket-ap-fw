@@ -126,7 +126,7 @@ AP_NO_OPT void ap_flush(ap_bank_t bank, ap_column_t col) {
     ctrl1 = 0x1000004;
     break;
   default:
-    assert(true && "Invalid bank type");
+    assert(false && "Invalid bank type");
   }
 
   *AP_MODE = mode;
@@ -206,4 +206,29 @@ void ap_search(ap_bank_t bank, ap_column_t col, uint8_t key,
   set_control(AP_STATE_STATIC, target, true, false);
 
   ap_irq_check();
+}
+
+void ap_launch(ap_cmd_t cmd, ap_bank_t bank, ap_column_t col, ap_axis_t axis,
+               ap_target_t target) {
+  assert(cmd != AP_CMD_SEARCH &&
+         "Use ap_search() for search operations — it handles the key write");
+
+  set_control(AP_STATE_STATIC, target, false, false);
+  set_mode(bank, col, axis, cmd);
+  set_control(AP_STATE_STATIC, target, true, false);
+}
+
+void ap_wait() { ap_irq_check(); }
+
+bool ap_poll() { return *((volatile uint8_t *)AP_IRQ) != 0; }
+
+void ap_execute(ap_cmd_t cmd, ap_bank_t bank, ap_column_t col, ap_axis_t axis,
+                ap_target_t target) {
+  assert(cmd != AP_CMD_SEARCH &&
+         "Use ap_search() for search operations — it handles the key write");
+
+  set_control(AP_STATE_STATIC, target, false, false);
+  set_mode(bank, col, axis, cmd);
+  set_control(AP_STATE_STATIC, target, true, false);
+  ap_wait();
 }
