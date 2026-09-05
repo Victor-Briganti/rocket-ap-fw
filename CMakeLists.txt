@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 4.2)
-project("Rocket AP" LANGUAGES C CXX ASM)
+cmake_minimum_required(VERSION 3.20)
+project("Rocket AP" LANGUAGES C ASM)
 
 # Enable generation of compile_commands.json for clangd / language servers
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
