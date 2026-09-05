@@ -71,7 +71,7 @@
 //===----------------------------------------------------------------------===//
 
 #define ap_irq_check()                                                         \
-  while (*((volatile uint8_t *)AP_IRQ) != 0) {                                 \
+  while (*((volatile uint8_t *)AP_IRQ) == 0) {                                 \
   }
 
 static void set_mode(ap_bank_t bank, ap_column_t col, ap_axis_t axis,
@@ -108,7 +108,6 @@ AP_NO_OPT void ap_flush(ap_bank_t bank, ap_column_t col) {
 
   uint32_t mode = 0x0;
   uint32_t ctrl1 = 0x0;
-  uint32_t ctrl2 = 0x0;
 
   switch (bank) {
   case AP_BANK_A:
@@ -118,11 +117,11 @@ AP_NO_OPT void ap_flush(ap_bank_t bank, ap_column_t col) {
     ctrl1 = 0x1000001;
     break;
   case AP_BANK_B:
-    mode = col == AP_COL_RIGHT ? 0x0 : 0x7000000;
+    mode = col == AP_COL_RIGHT ? 0x7000000 : 0x0;
     ctrl1 = 0x1000002;
     break;
   case AP_BANK_C:
-    mode = col == AP_COL_RIGHT ? 0x0 : 0x7000000;
+    mode = col == AP_COL_RIGHT ? 0x7000000 : 0x0;
     ctrl1 = 0x1000004;
     break;
   default:
@@ -131,7 +130,7 @@ AP_NO_OPT void ap_flush(ap_bank_t bank, ap_column_t col) {
 
   *AP_MODE = mode;
   *AP_CONTROL = ctrl1;
-  *AP_CONTROL = ctrl2;
+  *AP_CONTROL = 0x0;
 
   *AP_MODE = 0x0;
 }
@@ -165,7 +164,7 @@ AP_NO_OPT void ap_bootstrap() {
 
 void ap_write_col(ap_bank_t bank, ap_column_t col, uint8_t *source,
                   size_t size) {
-  assert(size < AP_COL_SIZE && "Size is bigger than the AP column size");
+  assert(size <= AP_COL_SIZE && "Size is bigger than the AP column size");
 
   uint32_t bankIdx = (AP_COL_SIZE * 2 * (uint8_t)bank);
   uint32_t colIdx = ((uint8_t)col * AP_COL_SIZE);
